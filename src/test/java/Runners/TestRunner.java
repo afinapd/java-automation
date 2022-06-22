@@ -2,7 +2,11 @@ package Runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -17,6 +21,16 @@ import org.junit.runner.RunWith;
         tags = "@search-verint"
 )
 
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests {
+        WebDriver driver;
+        @BeforeSuite
+        public void beforeSuite() {
+                System.out.println("================ BEFORE SUITE ================");
+        }
 
+        @AfterSuite
+        public void afterSuite() {
+                driver.close();
+                driver.quit();
+        }
 }

@@ -28,7 +28,7 @@ public class SearchPage {
     }
 
     public List<WebElement> getTitleArticle(){
-        List<WebElement> searchResult = driver.findElements(By.xpath("//span[@class='gray-card__heading h5']"));
+        List<WebElement> searchResult = driver.findElements(title_article);
         return searchResult;
     }
 }
