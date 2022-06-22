@@ -6,4 +6,4 @@ Feature: 'When user go to the Verint search page, and search for an item,
     Given user visits the Verint website
     When click the search button
     And search with "news" keyword
-    Then article contains that keyword appears
+    Then article contains that "news" appears

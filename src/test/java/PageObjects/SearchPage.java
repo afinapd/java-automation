@@ -21,11 +21,10 @@ public class SearchPage {
         driver.findElement(search_button).click();
     }
 
-    public void setSearchInput(String keyword) throws InterruptedException {
+    public void setSearchInput(String keyword) {
         driver.findElement(search_field).isEnabled();
         driver.findElement(search_field).sendKeys(keyword);
         driver.findElement(search_field).sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
         FormData.setKeyword(keyword);
     }
 }
